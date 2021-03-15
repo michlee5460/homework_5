@@ -93,7 +93,7 @@ body {
 
 
 
-/* ------ NAV BAR STYLES -----*/
+/* ------ HOME PAGE STYLES -----*/
 
 .home-header {
     color: #FFA800;
@@ -124,7 +124,7 @@ body {
     width: 20%;
 }
 
-#resume-button:link, #resume-button:visited {
+#order-button:link, #order-button:visited {
     font-size: small;
     font-weight: bold;
     color: #FFFFFF;
@@ -141,9 +141,50 @@ body {
 
 }
 
-#resume-button:hover, #resume-button:active {
+#order-button:hover, #order-button:active {
     background-color: #FDF1DA;
     color: #FFA800;
     transition: 0.3s;
 }
 
+
+/* ------ BROWSE PAGE STYLES -----*/
+
+.grid-wrapper {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 30em 30em 30em;
+    grid-template-rows: 25em 25em;
+}
+
+.item1 {
+    text-align: center;
+    background-color: lightpink;
+    margin: 1em;
+}
+
+.item1 h3 {
+    text-align: left;
+}
+
+
+.item2 {
+    background-color: lightblue;
+    margin: 1em;
+}
+.item3 {
+    background-color: lightgrey;
+    margin: 1em;
+}
+.item4 {
+    background-color: lightyellow;
+    margin: 1em;
+}
+.item5 {
+    background-color: lightsalmon;
+    margin: 1em;
+}
+.item6 {
+    background-color: lightgreen;
+    margin: 1em;
+}
