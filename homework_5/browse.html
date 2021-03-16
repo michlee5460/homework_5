@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device=width, initial-scale=1.0">
     <title>Bun Bun Menu</title>
-    <link rel = "icon" href="imgs/bblogo-small.png"> 
+    <link rel="icon" href="imgs/bblogo-small.png"> 
     <link rel="stylesheet" href="https://use.typekit.net/ahg0pva.css">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -14,7 +14,7 @@
       <div id="content-wrap">
         <ul class="navbar">
           <li class="navitem-left">
-            <a class="navitem-link" href="index.html">
+            <a href="index.html">
               <img class="navbar-logo" src="imgs/bblogo-small.png" alt=""/>
             </a>
           </li>
@@ -32,32 +32,34 @@
             <a class="order-button" href="#open-modal">ADD TO BASKET</a>
           </div>
           <div id="open-modal" class="modal-window">
-            <a href="#modal-close" title="Close" class="modal-close">close &times;</a>
-            <div class="modal-row">
-              <div class="modal-column">
-                <img class="item-img" src=imgs/bun-original.png alt="original">
-                <h1 class="item-header">Original</h1>
-                <p class="item-description">The bun that started it all. Our original cinnamon bun has a golden, crisp outside and a cinnaminalicious swirl.</p>
-              </div>
-              <div class="modal-column">
-                <h1 class="item-header2">Pick a Glaze</h1>
-                <p class="modal-description">All of our glaze is freshly made to order. That means no soggy buns!</p>
-                <select name="glaze" class="modal-drop-under">
-                  <option value="none">None</option>
-                  <option value="sm">Sugar Milk</option>
-                  <option value="vm">Vanilla Milk</option>
-                  <option value="dc">Double Chocolate</option>
-                </select>
-                <br><br><br>
-                <strong>Pick a Quantity</strong>
-                <select name="quant" class="modal-drop-right">
-                  <option value="one">1</option>
-                  <option value="three">3</option>
-                  <option value="six">6</option>
-                  <option value="twelve">12</option>
-                </select>
-                <br><br>
-                <strong class="modal-price">$4.00</strong><a class="order-button" id="modal-order-button" href="#OrderNow">ADD TO BASKET</a>
+            <div>
+              <a href="#modal-close" title="Close" class="modal-close">close &times;</a>
+              <div class="modal-row">
+                <div class="modal-column">
+                  <img class="item-img" src=imgs/bun-original.png alt="original">
+                  <h1 class="item-header">Original</h1>
+                  <p class="item-description">The bun that started it all. Our original cinnamon bun has a golden, crisp outside and a cinnaminalicious swirl.</p>
+                </div>
+                <div class="modal-column">
+                  <h1 class="item-header2">Pick a Glaze</h1>
+                  <p class="modal-description">All of our glaze is freshly made to order. That means no soggy buns!</p>
+                  <select name="glaze" class="modal-drop-under">
+                    <option value="none">None</option>
+                    <option value="sm">Sugar Milk</option>
+                    <option value="vm">Vanilla Milk</option>
+                    <option value="dc">Double Chocolate</option>
+                  </select>
+                  <br><br><br>
+                  <strong>Pick a Quantity</strong>
+                  <select name="quant" class="modal-drop-right">
+                    <option value="one">1</option>
+                    <option value="three">3</option>
+                    <option value="six">6</option>
+                    <option value="twelve">12</option>
+                  </select>
+                  <br><br>
+                  <strong class="modal-price">$4.00</strong><a class="order-button" id="modal-order-button" href="#OrderNow">ADD TO BASKET</a>
+                </div>
               </div>
             </div>
           </div>

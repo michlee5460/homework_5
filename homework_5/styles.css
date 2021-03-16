@@ -124,7 +124,7 @@ body {
     width: 20%;
 }
 
-.order-button:link, #order-button:visited {
+.order-button:link, .order-button:visited {
     font-size: small;
     font-weight: bold;
     color: #FFFFFF;
@@ -141,7 +141,7 @@ body {
 
 }
 
-.order-button:hover, #order-button:active {
+.order-button:hover, .order-button:active {
     background-color: #FDF1DA;
     color: #FFA800;
     transition: 0.3s;
@@ -189,7 +189,7 @@ body {
 
 
 /* --------- MODAL STYLE (SOURCE: Amit Agarwal 2017) --------*/
-/* https://www.labnol.org/code/20083-modal-popup-css */
+/* ---- https://www.labnol.org/code/20083-modal-popup-css ---*/
 
 .modal-window {
     position: fixed;
@@ -242,7 +242,7 @@ body {
 
 .modal-price{
     font-size: 1.75em;
-    margin: 1em;
+    margin: 1em 1em 0em 0em;
 }
 
 .modal-row {
