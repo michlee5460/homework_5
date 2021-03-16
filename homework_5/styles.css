@@ -124,7 +124,7 @@ body {
     width: 20%;
 }
 
-#order-button:link, #order-button:visited {
+.order-button:link, #order-button:visited {
     font-size: small;
     font-weight: bold;
     color: #FFFFFF;
@@ -141,7 +141,7 @@ body {
 
 }
 
-#order-button:hover, #order-button:active {
+.order-button:hover, #order-button:active {
     background-color: #FDF1DA;
     color: #FFA800;
     transition: 0.3s;
@@ -154,37 +154,114 @@ body {
     display: grid;
     justify-content: center;
     grid-template-columns: 30em 30em 30em;
-    grid-template-rows: 25em 25em;
+    grid-template-rows: 31em 31em;
+    margin-bottom: 6em;
 }
 
-.item1 {
-    text-align: center;
-    background-color: lightpink;
-    margin: 1em;
-}
-
-.item1 h3 {
+.item-header {
     text-align: left;
+    font-size: 2em;
+    margin: 0;
+}
+
+.item-header2 {
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
 }
 
 
-.item2 {
-    background-color: lightblue;
+.item-description {
+    text-align: left;
+    margin-top: 0.25em;
+}
+
+.item {
+    text-align: center;
+    margin: 2em;
+}
+
+.item-img {
+    width: 100%;
+}
+
+
+
+
+/* --------- MODAL STYLE (SOURCE: Amit Agarwal 2017) --------*/
+/* https://www.labnol.org/code/20083-modal-popup-css */
+
+.modal-window {
+    position: fixed;
+    background-color: rgba(69, 69, 69, 0.75);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+  
+.modal-window:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-window>div {
+    width: 50em;
+    position: relative;
+    margin: 10% auto;
+    padding: 2rem;
+    background: #fff;
+    color: #444;
+}
+
+.modal-window header {
+    font-weight: bold;
+}
+  
+.modal-close {
+    color: #aaa;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+}
+  
+.modal-close:hover {
+    color: #000;
+}
+
+.modal-price{
+    font-size: 1.75em;
     margin: 1em;
 }
-.item3 {
-    background-color: lightgrey;
-    margin: 1em;
+
+.modal-row {
+    display: flex;
 }
-.item4 {
-    background-color: lightyellow;
-    margin: 1em;
+  
+.modal-column {
+    flex: 50%;
+    padding: 2em;
 }
-.item5 {
-    background-color: lightsalmon;
-    margin: 1em;
+
+.modal-description {
+    margin: .5em 0 0 0;
 }
-.item6 {
-    background-color: lightgreen;
-    margin: 1em;
+
+.modal-drop-right {
+    margin-left: 1em;
+}
+
+.modal-drop-under {
+    margin-top: 0.75em;
 }
