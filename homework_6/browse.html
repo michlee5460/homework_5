@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <title>Bun Bun Menu</title>
+    <link rel="icon" href="imgs/bblogo-small.png"> 
+    <link rel="stylesheet" href="https://use.typekit.net/ahg0pva.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div id="page-container">
+      <div id="content-wrap">
+        <ul class="navbar">
+          <li class="navitem-left">
+            <a href="index.html">
+              <img class="navbar-logo" src="imgs/bblogo-small.png" alt=""/>
+            </a>
+          </li>
+          <li class="navitem-right"><a class="navitem-link" href="#news">CART (0)</a></li>
+          <li class="navitem-right"><a class="navitem-link" href="#news">ABOUT</a></li>
+          <li class="navitem-right"><a class="navitem-link" href="#contact">GALLERY</a></li>
+          <li class="navitem-right"><a class="navitem-link" href="#about">MENU</a></li>
+        </ul>
+      
+        <div class="grid-wrapper">
+          <div class="item">
+            <img class="item-img" src=imgs/bun-original.png alt="original">
+            <h1 class="item-header">Original</h1>
+            <p class="item-description">The bun that started it all. Our original cinnamon bun has a golden, crisp outside and a cinnaminalicious swirl.</p>
+            <a class="order-button" href="#open-modal">ADD TO BASKET</a>
+          </div>
+          <div id="open-modal" class="modal-window">
+            <div>
+              <a href="#modal-close" title="Close" class="modal-close">close &times;</a>
+              <div class="modal-row">
+                <div class="modal-column">
+                  <img class="item-img" src=imgs/bun-original.png alt="original">
+                  <h1 class="item-header">Original</h1>
+                  <p class="item-description">The bun that started it all. Our original cinnamon bun has a golden, crisp outside and a cinnaminalicious swirl.</p>
+                </div>
+                <div class="modal-column">
+                  <h1 class="item-header2">Pick a Glaze</h1>
+                  <p class="modal-description">All of our glaze is freshly made to order. That means no soggy buns!</p>
+                  <select name="glaze" class="modal-drop-under">
+                    <option value="none">None</option>
+                    <option value="sm">Sugar Milk</option>
+                    <option value="vm">Vanilla Milk</option>
+                    <option value="dc">Double Chocolate</option>
+                  </select>
+                  <br><br><br>
+                  <strong>Pick a Quantity</strong>
+                  <select name="quant" class="modal-drop-right">
+                    <option value="one">1</option>
+                    <option value="three">3</option>
+                    <option value="six">6</option>
+                    <option value="twelve">12</option>
+                  </select>
+                  <br><br>
+                  <strong class="modal-price">$4.00</strong><a class="order-button" id="modal-order-button" href="#OrderNow">ADD TO BASKET</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img class="item-img" src=imgs/bun-blackberry.png alt="blackberry">
+            <h1 class="item-header">Blackberry</h1>
+            <p class="item-description">Add a fruity, tart flavor with our blackberry bun. We bake fresh blackberries straight into the buns.</p>
+            <a class="order-button" href="#OrderNow">ADD TO BASKET</a>
+          </div>
+          <div class="item">
+            <img class="item-img" src=imgs/bun-walnut.png alt="walnut">
+            <h1 class="item-header">Walnut</h1>
+            <p class="item-description">Go nuts over our walnut cinnamon bun. This bun achienves the perfect balance between nutty and sweet.</p>
+            <a class="order-button" href="#OrderNow">ADD TO BASKET</a>
+          </div>
+          <div class="item">
+            <img class="item-img" src=imgs/bun-original.png alt="original gf">
+            <h1 class="item-header">Original (Gluten-Free)</h1>
+            <p class="item-description">The same taste and deliciousness of the original bun, but with a twist for those who want a gluten-free option.</p>
+            <a class="order-button" href="#OrderNow">ADD TO BASKET</a>
+          </div>
+          <div class="item">
+            <img class="item-img" src=imgs/bun-pumpkin.png  alt="pumpkin">
+            <h1 class="item-header">Pumpkin Spice</h1>
+            <p class="item-description">A seasonal favorite that’s so good, we have it all year round. Channel fall vibes any day of the year.</p>
+            <a class="order-button" href="#OrderNow">ADD TO BASKET</a>
+          </div>
+          <div class="item">
+            <img class="item-img" src=imgs/bun-pecan.png  alt="pecan">
+            <h1 class="item-header">Caramel Pecan</h1>
+            <p class="item-description">Sweet caramel. Fresh curnchy pecans. A recipe for irresistability. The favorite among pecan pie lovers.</p>
+            <a class="order-button" href="#OrderNow">ADD TO BASKET</a>
+          </div>
+        </div>
+
+      </div>
+      <footer id="footer-container">
+        <ul class="footer">
+          <li class="footer-left"><a class="footer-link" href="#FAQs">FAQs</a></li>
+          <li class="footer-left"><a class="footer-link" href="#JoinOurShop">Join Our Shop</a></li>
+          <li class="footer-left"><a class="footer-link" href="#TermsOfServices">Terms of Services</a></li>
+          <li class="footer-right">Bun Bun Bake Shop (2021)</li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
