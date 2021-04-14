@@ -1,3 +1,5 @@
+var totalBuns = 0;
+
 // ----------- BUN IMAGE HOVER INTERACTION -----------
 
 var originalBun = document.getElementById("original-bun-card");
@@ -67,7 +69,6 @@ pecanBun.onmouseout = function() {
 }
 
 
-
 // ----------- MODAL FUNCTIONS -----------
 
 // Original
@@ -87,6 +88,13 @@ function updatePrice3(quant) {
     document.getElementById("priceid").innerText = "$".concat((quant*3).toString());
 }
 
+function incrementBuns(){
+    var newbuns = parseInt((document.getElementById("priceid").innerText).substring(1))/3;
+    totalBuns += newbuns;
+    document.getElementById("basket_quant").innerText = totalBuns.toString();
+    ogModal.style.display = "none";
+}
+
 // Blackberry
 
 var bbModal = document.getElementById("bb-modal");
@@ -102,6 +110,13 @@ bbSpan.onclick = function() {
 
 function updatePrice4(quant) {
     document.getElementById("bbpriceid").innerText = "$".concat((quant*4).toString());
+}
+
+function bbincrementBuns(){
+    var newbuns = parseInt((document.getElementById("bbpriceid").innerText).substring(1))/4;
+    totalBuns += newbuns;
+    document.getElementById("basket_quant").innerText = totalBuns.toString();
+    bbModal.style.display = "none";
 }
 
 // Walnut
@@ -121,6 +136,13 @@ function updatePrice3w(quant) {
     document.getElementById("w-priceid").innerText = "$".concat((quant*3).toString());
 }
 
+function wincrementBuns(){
+    var newbuns = parseInt((document.getElementById("w-priceid").innerText).substring(1))/3;
+    totalBuns += newbuns;
+    document.getElementById("basket_quant").innerText = totalBuns.toString();
+    wModal.style.display = "none";
+}
+
 // Gluten-Free
 
 var gfModal = document.getElementById("gf-modal");
@@ -136,6 +158,13 @@ gfSpan.onclick = function() {
 
 function updatePrice3gf(quant) {
     document.getElementById("gf-priceid").innerText = "$".concat((quant*3).toString());
+}
+
+function gfincrementBuns(){
+    var newbuns = parseInt((document.getElementById("gf-priceid").innerText).substring(1))/3;
+    totalBuns += newbuns;
+    document.getElementById("basket_quant").innerText = totalBuns.toString();
+    gfModal.style.display = "none";
 }
 
 // Pumpkin
@@ -155,6 +184,13 @@ function updatePrice4pk(quant) {
     document.getElementById("pk-priceid").innerText = "$".concat((quant*4).toString());
 }
 
+function pkincrementBuns(){
+    var newbuns = parseInt((document.getElementById("pk-priceid").innerText).substring(1))/4;
+    totalBuns += newbuns;
+    document.getElementById("basket_quant").innerText = totalBuns.toString();
+    pkModal.style.display = "none";
+}
+
 // Caramel Pecan
 
 var cpModal = document.getElementById("cp-modal");
@@ -170,6 +206,13 @@ cpSpan.onclick = function() {
 
 function updatePrice4cp(quant) {
     document.getElementById("cp-priceid").innerText = "$".concat((quant*4).toString());
+}
+
+function cpincrementBuns(){
+    var newbuns = parseInt((document.getElementById("cp-priceid").innerText).substring(1))/4;
+    totalBuns += newbuns;
+    document.getElementById("basket_quant").innerText = totalBuns.toString();
+    cpModal.style.display = "none";
 }
 
 window.onclick = function(event) {

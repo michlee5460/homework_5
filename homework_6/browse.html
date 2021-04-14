@@ -22,7 +22,7 @@
               <img class="navbar-logo" src="imgs/bblogo-small.png" alt=""/>
             </a>
           </li>
-          <li class="navitem-right"><a class="navitem-link" href="basket.html">BASKET (0)</a></li>
+          <li class="navitem-right"><a class="navitem-link" href="basket.html">BASKET (<span id="basket_quant">0</span>)</a></li>
           <li class="navitem-right"><a class="navitem-link" href="browse.html">MENU</a></li>
         </ul>
       
@@ -40,6 +40,7 @@
             </h1>
             <p class="item-description">The bun that started it all. Our original bun has a golden, crisp outside and a cinnamon-sugar swirl.</p>
           </div>
+          
 
           <!-- Original Modal -->
           <div id="og-modal" class="modal">
@@ -83,7 +84,7 @@
                     <p class="price" id="priceid">
                       $3
                     </p>
-                    <a class="basket-button order-button" href="browse.html">ADD TO BASKET</a>
+                    <a class="basket-button order-button" onclick="incrementBuns()" href="#">ADD TO BASKET</a>
                   </div>
                 </div>
               </div>
@@ -142,7 +143,7 @@
                     <p class="price" id="bbpriceid">
                       $4
                     </p>
-                    <a class="basket-button order-button" href="browse.html">ADD TO BASKET</a>
+                    <a class="basket-button order-button" onclick="bbincrementBuns()" href="#">ADD TO BASKET</a>
                   </div>
                 </div>
               </div>
@@ -201,7 +202,7 @@
                     <p class="price" id="w-priceid">
                       $3
                     </p>
-                    <a class="basket-button order-button" href="browse.html">ADD TO BASKET</a>
+                    <a class="basket-button order-button" onclick="wincrementBuns()" href="#">ADD TO BASKET</a>
                   </div>
                 </div>
               </div>
@@ -260,7 +261,7 @@
                     <p class="price" id="gf-priceid">
                       $3
                     </p>
-                    <a class="basket-button order-button" href="browse.html">ADD TO BASKET</a>
+                    <a class="basket-button order-button" onclick="gfincrementBuns()" href="#">ADD TO BASKET</a>
                   </div>
                 </div>
               </div>
@@ -319,7 +320,7 @@
                     <p class="price" id="pk-priceid">
                       $4
                     </p>
-                    <a class="basket-button order-button" href="browse.html">ADD TO BASKET</a>
+                    <a class="basket-button order-button" onclick="pkincrementBuns()" href="#">ADD TO BASKET</a>
                   </div>
                 </div>
               </div>
@@ -378,7 +379,7 @@
                     <p class="price" id="cp-priceid">
                       $4
                     </p>
-                    <a class="basket-button order-button" href="browse.html">ADD TO BASKET</a>
+                    <a class="basket-button order-button" onclick="cpincrementBuns()" href="#">ADD TO BASKET</a>
                   </div>
                 </div>
               </div>
