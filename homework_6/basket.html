@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <title>Bun Bun Menu</title>
+    <link rel="icon" href="imgs/bblogo-small.png"> 
+    <link rel="stylesheet" href="https://use.typekit.net/ahg0pva.css">
+    <link rel="stylesheet" href="styles.css">
+    <!--<script defer src="script.js"></script> -->
+  </head>
+
+  <body>
+    <div id="page-container">
+      <div id="content-wrap">
+
+        <!-- Nav Bar -->
+      
+        <ul class="navbar">
+          <li class="navitem-left">
+            <a href="index.html">
+              <img class="navbar-logo" src="imgs/bblogo-small.png" alt=""/>
+            </a>
+          </li>
+          <li class="navitem-right"><a class="navitem-link" href="basket.html">BASKET (0)</a></li>
+          <li class="navitem-right"><a class="navitem-link" href="browse.html">MENU</a></li>
+        </ul>
+      
+
+        <!-- Bun Grid -->
+        <div class="basket-grid-wrapper">
+          <div class="grid-basket-list">
+            <h1>Bun Basket</h1>
+            <form>
+              <div class="radio-group">
+                <input type="radio" id="option-one" name="quantity" checked="checked" value=1><label class="tkout-del-label" for="option-one">TAKEOUT</label>
+                <input type="radio" id="option-two" name="quantity" value=2><label class="tkout-del-label" for="option-two">DELIVERY</label>
+              </div>
+            </form>
+            <div id="bb-address">
+              <p class="gray-text">Pickup Address:</p>
+              <p class="shop-address">123 Bun Bun Way<br>Pittsburgh, PA 15213</p>
+            </div>
+            <div id="og-bun-basket">
+              <div class="item-grid">
+                <div>
+                  <img class="basket-img item-img" id="original-bun-img" src=imgs/bun-original.png alt="original">
+                </div>
+                <div>
+                  <h1 class="basket-item-header">Original <span class="basket-close">&times;</span></h1>
+                  <p>No glaze</p>
+                  <p><span>-</span> 1 <span>+</span> <span class="item-price">$3.00</span></p>
+                </div>
+              </div>
+            </div>
+            <div id="og-bun-basket">
+              <div class="item-grid">
+                <div>
+                  <img class="basket-img item-img" id="original-bun-img" src=imgs/bun-original.png alt="original">
+                </div>
+                <div>
+                  <h1 class="basket-item-header">Original <span class="basket-close">&times;</span></h1>
+                  <p>No glaze</p>
+                  <p><span>-</span> 1 <span>+</span> <span class="item-price">$3.00</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-summary">
+            <div class="summary-rect bottom-padding">
+              <h1 class="summary-title">SUMMARY</h1>
+              <div class="summary-grid">
+                <div class="grid-item-left">
+                  Subtotal
+                </div>
+                <div class="grid-item-right">
+                  $8.00
+                </div>
+                <div class="grid-item-left bottom-border">
+                  Tax (6%)
+                </div>
+                <div class="grid-item-right bottom-border">
+                  $0.48
+                </div>
+                <div class="grid-item-left top-border">
+                  Total
+                </div>
+                <div class="grid-item-right top-border">
+                  $8.48
+                </div>
+                
+              </div>
+              <a class="order-button" href="#checkout">CHECKOUT</a>
+            </div>
+          </div>
+        </div>
+
+    
+      <!-- Footer -->
+      <footer id="footer-container">
+        <ul class="footer">
+          <li class="footer-left"><a class="footer-link" href="#FAQs">FAQs</a></li>
+          <li class="footer-left"><a class="footer-link" href="#JoinOurShop">Join Our Shop</a></li>
+          <li class="footer-left"><a class="footer-link" href="#TermsOfServices">Terms of Services</a></li>
+          <li class="footer-right">Bun Bun Bake Shop (2021)</li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>

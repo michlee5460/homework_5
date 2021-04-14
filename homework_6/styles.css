@@ -292,3 +292,100 @@ input[type=radio]:checked + label{
     margin: auto .75em .5em auto;
     font-size: xx-large;
 }
+
+/* --------- BASKET STYLES --------- */
+
+.basket-grid-wrapper {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 30em 20em;
+    margin-bottom: 3em;
+    grid-column-gap: 1.5em;
+}
+
+.summary-rect {
+    background-color: #F7F7F7;
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: small;
+}
+
+.summary-title {
+  font-size: large;
+  padding: 1.5em 0em 1.5em 0em;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 2em 3em 4em;
+  text-align: center;
+}
+
+.grid-item-left {
+  text-align: left;
+  padding-left: 3em;
+}
+
+.grid-item-right {
+  text-align: right;
+  padding-right: 3em;
+}
+
+.bottom-border {
+  border-bottom: solid 1px #B5B5B5;
+  padding-bottom: 1em;
+}
+
+.top-border {
+  padding-top: 1.5em;
+}
+
+.tkout-del-label {
+  display: inline-block;
+  cursor: pointer;
+  padding: .75em 2em;
+  background-color: #FFFFFF;
+  font-size: small;
+  text-align: center;
+}
+
+.grid-basket-list {
+  font-size: small;
+}
+
+.gray-text {
+  color: #8A8A8A;
+  margin-bottom: .25em;
+}
+
+.shop-address{
+  margin-top: 0em;
+  margin-bottom: 2em;
+}
+
+#og-bun-basket {
+  border-top: 1px solid #BDBDBD;
+}
+
+.basket-img {
+  width: 100%;
+  margin: 1em 0em .5em 0em;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.basket-item-header {
+  margin-top: 2em;
+  font-size: medium;
+}
+
+.basket-close {
+  float: right;
+  font-weight: normal;
+  font-size: x-large;
+  color: #BDBDBD;
+}

@@ -7,7 +7,7 @@
     <link rel="icon" href="imgs/bblogo-small.png"> 
     <link rel="stylesheet" href="https://use.typekit.net/ahg0pva.css">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <script defer src="scripts/script-browse.js"></script>
   </head>
 
   <body>
@@ -30,7 +30,8 @@
         <!-- Bun Grid -->
 
         <div class="grid-wrapper">
-          
+
+          <!-- Original Bun -->
           <div class="item" id="original-bun-card">
             <img class="item-img" id="original-bun-img" src=imgs/bun-original.png alt="original">
             <h1 class="item-header">
@@ -40,11 +41,11 @@
             <p class="item-description">The bun that started it all. Our original bun has a golden, crisp outside and a cinnamon-sugar swirl.</p>
           </div>
 
-          <!-- The Modal -->
-          <div id="myModal" class="modal">
+          <!-- Original Modal -->
+          <div id="og-modal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
-              <span class="close">&times;</span>
+              <span class="close" id="og-close">&times;</span>
               <div class="product-content">
                 <div class="modal-grid-container">
                   <div class="grid-item-img">
@@ -65,10 +66,10 @@
                     <h1 class="item-header">Quantity</h1>
                     <form>
                       <div class="radio-group">
-                        <input type="radio" onclick="myFunction(this.value)" id="option-one" name="quantity" checked="checked" value=1><label class="quant-label" for="option-one">1</label>
-                        <input type="radio" onclick="myFunction(this.value)" id="option-two" name="quantity" value=2><label class="quant-label" for="option-two">2</label>
-                        <input type="radio" onclick="myFunction(this.value)" id="option-three" name="quantity"value=3><label class="quant-label" for="option-three">3</label>
-                        <input type="radio" onclick="myFunction(this.value)" id="option-four" name="quantity" value=4><label class="quant-label" for="option-four">4</label>
+                        <input type="radio" onclick="updatePrice3(this.value)" id="option-one" name="quantity" checked="checked" value=1><label class="quant-label" for="option-one">1</label>
+                        <input type="radio" onclick="updatePrice3(this.value)" id="option-two" name="quantity" value=3><label class="quant-label" for="option-two">3</label>
+                        <input type="radio" onclick="updatePrice3(this.value)" id="option-three" name="quantity"value=6><label class="quant-label" for="option-three">6</label>
+                        <input type="radio" onclick="updatePrice3(this.value)" id="option-four" name="quantity" value=12><label class="quant-label" for="option-four">12</label>
                       </div>
                     </form>
                   </div>
@@ -89,6 +90,7 @@
             </div>
           </div>
 
+          <!-- Blackberry Bun -->
           <div class="item" id="blackberry-bun-card">
             <img class="item-img" id="blackberry-bun-img" src=imgs/bun-blackberry.png alt="blackberry">
             <h1 class="item-header">
@@ -97,7 +99,57 @@
             </h1>
             <p class="item-description">Add a fruity, tart flavor with our blackberry bun. We bake fresh blackberries straight into the buns.</p>
           </div>
+
+          <!-- Blackberry Modal -->
+          <div id="bb-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close" id="bb-close">&times;</span>
+              <div class="product-content">
+                <div class="modal-grid-container">
+                  <div class="grid-item-img">
+                    <img class="item-img" id="blackberry-bun-img" src=imgs/bun-blackberry.png alt="blackberry">
+                  </div>
+                  <div class="grid-item-text">
+                    <!-- Glaze selection -->
+                    <h1 class="item-header">Glaze</h1>
+                    <form>
+                      <div class="radio-group">
+                        <input type="radio" id="bboption-none" name="bbglaze" checked="checked"><label for="bboption-none">No<br>Glaze</label>
+                        <input type="radio" id="bboption-sm" name="bbglaze"><label for="bboption-sm">Sugar<br>Milk</label>
+                        <input type="radio" id="bboption-vm" name="bbglaze"><label for="bboption-vm">Vanilla<br>Milk</label>
+                        <input type="radio" id="bboption-dc" name="bbglaze"><label for="bboption-dc">Double<br>Chocolate</label>
+                      </div>
+                    </form>
+                    <!-- Quantity selection -->
+                    <h1 class="item-header">Quantity</h1>
+                    <form>
+                      <div class="radio-group">
+                        <input type="radio" onclick="updatePrice4(this.value)" id="bboption-one" name="bbquantity" checked="checked" value=1><label class="quant-label" for="bboption-one">1</label>
+                        <input type="radio" onclick="updatePrice4(this.value)" id="bboption-two" name="bbquantity" value=3><label class="quant-label" for="bboption-two">3</label>
+                        <input type="radio" onclick="updatePrice4(this.value)" id="bboption-three" name="bbquantity"value=6><label class="quant-label" for="bboption-three">6</label>
+                        <input type="radio" onclick="updatePrice4(this.value)" id="bboption-four" name="bbquantity" value=12><label class="quant-label" for="bboption-four">12</label>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="grid-item-description">
+                    <h1 class="item-header">
+                      Blackberry
+                    </h1>
+                    <p class="item-description">Add a fruity, tart flavor with our blackberry bun. We bake fresh blackberries straight into the buns.</p>
+                  </div>
+                  <div class="grid-item-price">
+                    <p class="price" id="bbpriceid">
+                      $4
+                    </p>
+                    <a class="basket-button order-button" href="browse.html">ADD TO BASKET</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           
+          <!-- Walnut Bun -->
           <div class="item" id="walnut-bun-card">
             <img class="item-img" id="walnut-bun-img" src=imgs/bun-walnut.png alt="walnut">
             <h1 class="item-header">
@@ -106,7 +158,57 @@
             </h1>
             <p class="item-description">Go nuts over our walnut cinnamon bun. It's the perfect balance between nutty and sweet.</p>
           </div>
+
+          <!-- Walnut Modal -->
+          <div id="w-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close" id="w-close">&times;</span>
+              <div class="product-content">
+                <div class="modal-grid-container">
+                  <div class="grid-item-img">
+                    <img class="item-img" id="walnut-bun-img" src=imgs/bun-walnut.png alt="blackberry">
+                  </div>
+                  <div class="grid-item-text">
+                    <!-- Glaze selection -->
+                    <h1 class="item-header">Glaze</h1>
+                    <form>
+                      <div class="radio-group">
+                        <input type="radio" id="w-option-none" name="w-glaze" checked="checked"><label for="w-option-none">No<br>Glaze</label>
+                        <input type="radio" id="w-option-sm" name="w-glaze"><label for="w-option-sm">Sugar<br>Milk</label>
+                        <input type="radio" id="w-option-vm" name="w-glaze"><label for="w-option-vm">Vanilla<br>Milk</label>
+                        <input type="radio" id="w-option-dc" name="w-glaze"><label for="w-option-dc">Double<br>Chocolate</label>
+                      </div>
+                    </form>
+                    <!-- Quantity selection -->
+                    <h1 class="item-header">Quantity</h1>
+                    <form>
+                      <div class="radio-group">
+                        <input type="radio" onclick="updatePrice3w(this.value)" id="w-option-one" name="w-quantity" checked="checked" value=1><label class="quant-label" for="w-option-one">1</label>
+                        <input type="radio" onclick="updatePrice3w(this.value)" id="w-option-two" name="w-quantity" value=3><label class="quant-label" for="w-option-two">3</label>
+                        <input type="radio" onclick="updatePrice3w(this.value)" id="w-option-three" name="w-quantity"value=6><label class="quant-label" for="w-option-three">6</label>
+                        <input type="radio" onclick="updatePrice3w(this.value)" id="w-option-four" name="w-quantity" value=12><label class="quant-label" for="w-option-four">12</label>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="grid-item-description">
+                    <h1 class="item-header">
+                      Walnut
+                    </h1>
+                    <p class="item-description">Go nuts over our walnut cinnamon bun. It's the perfect balance between nutty and sweet.</p>
+                  </div>
+                  <div class="grid-item-price">
+                    <p class="price" id="w-priceid">
+                      $3
+                    </p>
+                    <a class="basket-button order-button" href="browse.html">ADD TO BASKET</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           
+          <!-- Gluten-Free Bun-->
           <div class="item" id="gf-bun-card">
             <img class="item-img" id="gf-bun-img" src=imgs/bun-original.png alt="original gf">
             <h1 class="item-header">
@@ -116,6 +218,56 @@
             <p class="item-description">The same deliciousness of the original bun, but with a twist for those who want a gluten-free option.</p>
           </div>
           
+          <!-- Gluten-Free Modal -->
+          <div id="gf-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close" id="gf-close">&times;</span>
+              <div class="product-content">
+                <div class="modal-grid-container">
+                  <div class="grid-item-img">
+                    <img class="item-img" id="gf-bun-img" src=imgs/bun-original.png alt="original gf">
+                  </div>
+                  <div class="grid-item-text">
+                    <!-- Glaze selection -->
+                    <h1 class="item-header">Glaze</h1>
+                    <form>
+                      <div class="radio-group">
+                        <input type="radio" id="gf-option-none" name="gf-glaze" checked="checked"><label for="gf-option-none">No<br>Glaze</label>
+                        <input type="radio" id="gf-option-sm" name="gf-glaze"><label for="gf-option-sm">Sugar<br>Milk</label>
+                        <input type="radio" id="gf-option-vm" name="gf-glaze"><label for="gf-option-vm">Vanilla<br>Milk</label>
+                        <input type="radio" id="gf-option-dc" name="gf-glaze"><label for="gf-option-dc">Double<br>Chocolate</label>
+                      </div>
+                    </form>
+                    <!-- Quantity selection -->
+                    <h1 class="item-header">Quantity</h1>
+                    <form>
+                      <div class="radio-group">
+                        <input type="radio" onclick="updatePrice3gf(this.value)" id="gf-option-one" name="gf-quantity" checked="checked" value=1><label class="quant-label" for="gf-option-one">1</label>
+                        <input type="radio" onclick="updatePrice3gf(this.value)" id="gf-option-two" name="gf-quantity" value=3><label class="quant-label" for="gf-option-two">3</label>
+                        <input type="radio" onclick="updatePrice3gf(this.value)" id="gf-option-three" name="gf-quantity"value=6><label class="quant-label" for="gf-option-three">6</label>
+                        <input type="radio" onclick="updatePrice3gf(this.value)" id="gf-option-four" name="gf-quantity" value=12><label class="quant-label" for="gf-option-four">12</label>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="grid-item-description">
+                    <h1 class="item-header">
+                      Gluten-Free
+                    </h1>
+                    <p class="item-description">The same deliciousness of the original bun, but with a twist for those who want a gluten-free option.</p>
+                  </div>
+                  <div class="grid-item-price">
+                    <p class="price" id="gf-priceid">
+                      $3
+                    </p>
+                    <a class="basket-button order-button" href="browse.html">ADD TO BASKET</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pumpkin Bun -->
           <div class="item" id="pumpkin-bun-card">
             <img class="item-img" id="pumpkin-bun-img" src=imgs/bun-pumpkin.png  alt="pumpkin">
             <h1 class="item-header">
@@ -124,7 +276,57 @@
             </h1>
             <p class="item-description">A seasonal favorite that’s so good, we have it all year round. Channel fall vibes any day of the year.</p>
           </div>
+
+          <!-- Pumpkin Modal -->
+          <div id="pk-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close" id="pk-close">&times;</span>
+              <div class="product-content">
+                <div class="modal-grid-container">
+                  <div class="grid-item-img">
+                    <img class="item-img" id="pumpkin-bun-img" src=imgs/bun-pumpkin.png alt="pumpkin">
+                  </div>
+                  <div class="grid-item-text">
+                    <!-- Glaze selection -->
+                    <h1 class="item-header">Glaze</h1>
+                    <form>
+                      <div class="radio-group">
+                        <input type="radio" id="pk-option-none" name="pk-glaze" checked="checked"><label for="pk-option-none">No<br>Glaze</label>
+                        <input type="radio" id="pk-option-sm" name="pk-glaze"><label for="pk-option-sm">Sugar<br>Milk</label>
+                        <input type="radio" id="pk-option-vm" name="pk-glaze"><label for="pk-option-vm">Vanilla<br>Milk</label>
+                        <input type="radio" id="pk-option-dc" name="pk-glaze"><label for="pk-option-dc">Double<br>Chocolate</label>
+                      </div>
+                    </form>
+                    <!-- Quantity selection -->
+                    <h1 class="item-header">Quantity</h1>
+                    <form>
+                      <div class="radio-group">
+                        <input type="radio" onclick="updatePrice4pk(this.value)" id="pk-option-one" name="pk-quantity" checked="checked" value=1><label class="quant-label" for="pk-option-one">1</label>
+                        <input type="radio" onclick="updatePrice4pk(this.value)" id="pk-option-two" name="pk-quantity" value=3><label class="quant-label" for="pk-option-two">3</label>
+                        <input type="radio" onclick="updatePrice4pk(this.value)" id="pk-option-three" name="pk-quantity"value=6><label class="quant-label" for="pk-option-three">6</label>
+                        <input type="radio" onclick="updatePrice4pk(this.value)" id="pk-option-four" name="pk-quantity" value=12><label class="quant-label" for="pk-option-four">12</label>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="grid-item-description">
+                    <h1 class="item-header">
+                      Pumpkin Spice
+                    </h1>
+                    <p class="item-description">A seasonal favorite that’s so good, we have it all year round. Channel fall vibes any day of the year.</p>
+                  </div>
+                  <div class="grid-item-price">
+                    <p class="price" id="pk-priceid">
+                      $4
+                    </p>
+                    <a class="basket-button order-button" href="browse.html">ADD TO BASKET</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           
+          <!-- Pecan Bun -->
           <div class="item" id="pecan-bun-card">
             <img class="item-img" id="pecan-bun-img" src=imgs/bun-pecan.png  alt="pecan">
             <h1 class="item-header">
@@ -133,12 +335,59 @@
             </h1>
             <p class="item-description">Sweet caramel. Fresh crunchy pecans. A recipe for irresistability. The favorite among pecan pie lovers.</p>
           </div>
+
+          <!-- Pecan Modal -->
+          <div id="cp-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close" id="cp-close">&times;</span>
+              <div class="product-content">
+                <div class="modal-grid-container">
+                  <div class="grid-item-img">
+                    <img class="item-img" id="pecan-bun-img" src=imgs/bun-pecan.png alt="pecan">
+                  </div>
+                  <div class="grid-item-text">
+                    <!-- Glaze selection -->
+                    <h1 class="item-header">Glaze</h1>
+                    <form>
+                      <div class="radio-group">
+                        <input type="radio" id="cp-option-none" name="cp-glaze" checked="checked"><label for="cp-option-none">No<br>Glaze</label>
+                        <input type="radio" id="cp-option-sm" name="cp-glaze"><label for="cp-option-sm">Sugar<br>Milk</label>
+                        <input type="radio" id="cp-option-vm" name="cp-glaze"><label for="cp-option-vm">Vanilla<br>Milk</label>
+                        <input type="radio" id="cp-option-dc" name="cp-glaze"><label for="cp-option-dc">Double<br>Chocolate</label>
+                      </div>
+                    </form>
+                    <!-- Quantity selection -->
+                    <h1 class="item-header">Quantity</h1>
+                    <form>
+                      <div class="radio-group">
+                        <input type="radio" onclick="updatePrice4cp(this.value)" id="cp-option-one" name="cp-quantity" checked="checked" value=1><label class="quant-label" for="cp-option-one">1</label>
+                        <input type="radio" onclick="updatePrice4cp(this.value)" id="cp-option-two" name="cp-quantity" value=3><label class="quant-label" for="cp-option-two">3</label>
+                        <input type="radio" onclick="updatePrice4cp(this.value)" id="cp-option-three" name="cp-quantity"value=6><label class="quant-label" for="cp-option-three">6</label>
+                        <input type="radio" onclick="updatePrice4cp(this.value)" id="cp-option-four" name="cp-quantity" value=12><label class="quant-label" for="cp-option-four">12</label>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="grid-item-description">
+                    <h1 class="item-header">
+                      Caramel Pecan
+                    </h1>
+                    <p class="item-description">Sweet caramel. Fresh crunchy pecans. A recipe for irresistability. The favorite among pecan pie lovers.</p>
+                  </div>
+                  <div class="grid-item-price">
+                    <p class="price" id="cp-priceid">
+                      $4
+                    </p>
+                    <a class="basket-button order-button" href="browse.html">ADD TO BASKET</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-
       <!-- Footer -->
-
       <footer id="footer-container">
         <ul class="footer">
           <li class="footer-left"><a class="footer-link" href="#FAQs">FAQs</a></li>
