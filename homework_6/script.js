@@ -87,3 +87,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+function myFunction(quant) {
+    document.getElementById("priceid").innerText = "$".concat((quant*3).toString());
+  }

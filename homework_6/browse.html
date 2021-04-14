@@ -51,10 +51,38 @@
                     <img class="item-img" id="original-bun-img" src=imgs/bun-original.png alt="original">
                   </div>
                   <div class="grid-item-text">
-                    Glaze selection and pricing
+                    <!-- Glaze selection -->
+                    <h1 class="item-header">Glaze</h1>
+                    <form>
+                      <div class="radio-group">
+                        <input type="radio" id="option-none" name="glaze" checked="checked"><label for="option-none">No<br>Glaze</label>
+                        <input type="radio" id="option-sm" name="glaze"><label for="option-sm">Sugar<br>Milk</label>
+                        <input type="radio" id="option-vm" name="glaze"><label for="option-vm">Vanilla<br>Milk</label>
+                        <input type="radio" id="option-dc" name="glaze"><label for="option-dc">Double<br>Chocolate</label>
+                      </div>
+                    </form>
+                    <!-- Quantity selection -->
+                    <h1 class="item-header">Quantity</h1>
+                    <form>
+                      <div class="radio-group">
+                        <input type="radio" onclick="myFunction(this.value)" id="option-one" name="quantity" checked="checked" value=1><label class="quant-label" for="option-one">1</label>
+                        <input type="radio" onclick="myFunction(this.value)" id="option-two" name="quantity" value=2><label class="quant-label" for="option-two">2</label>
+                        <input type="radio" onclick="myFunction(this.value)" id="option-three" name="quantity"value=3><label class="quant-label" for="option-three">3</label>
+                        <input type="radio" onclick="myFunction(this.value)" id="option-four" name="quantity" value=4><label class="quant-label" for="option-four">4</label>
+                      </div>
+                    </form>
                   </div>
                   <div class="grid-item-description">
-                    Original, The bun that started it all. Our original bun has a golden, crisp outside and a cinnamon-sugar swirl.
+                    <h1 class="item-header">
+                      Original
+                    </h1>
+                    <p class="item-description">The bun that started it all. Our original bun has a golden, crisp outside and a cinnamon-sugar swirl.</p>
+                  </div>
+                  <div class="grid-item-price">
+                    <p class="price" id="priceid">
+                      $3
+                    </p>
+                    <a class="basket-button order-button" href="browse.html">ADD TO BASKET</a>
                   </div>
                 </div>
               </div>

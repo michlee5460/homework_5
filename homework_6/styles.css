@@ -234,10 +234,61 @@ body {
     cursor: pointer;
 }
 
-
 .modal-grid-container {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 48% 48%;
     grid-template-rows: auto auto;
-    grid-column-gap: 3em;
+    grid-column-gap: 1.5em;
+}
+
+.radio-group {
+    border: solid 3px #FFA800;
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color:#FFA800;
+}
+
+input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    background-color: #FFFFFF;
+    font-size: small;
+    text-align: center;
+}
+
+input[type=radio]:checked + label{
+    color: #FFFFFF;
+    background: #FFA800;
+    font-weight: bold;
+}
+
+.quant-label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 1em 2em;
+    background-color: #FFFFFF;
+    font-size: small;
+    text-align: center;
+}
+
+.basket-button {
+    margin: none;
+}
+
+.grid-item-price {
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+}
+.price {
+    margin: auto .75em .5em auto;
+    font-size: xx-large;
 }
