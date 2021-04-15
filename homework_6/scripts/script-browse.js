@@ -1,98 +1,78 @@
 var totalBuns = 0;
 
+var hoverImgPaths = ['imgs/hover-bun-original.png', 'imgs/hover-bun-blackberry.png', 'imgs/hover-bun-walnut.png', 'imgs/hover-bun-original.png', 'imgs/hover-bun-pumpkin.png', 'imgs/hover-bun-pecan.png']
+var bunImgPaths = ['imgs/bun-original.png', 'imgs/bun-blackberry.png', 'imgs/bun-walnut.png', 'imgs/bun-original.png', 'imgs/bun-pumpkin.png', 'imgs/bun-pecan.png']
+
 // ----------- BUN IMAGE HOVER INTERACTION -----------
 
 var originalBun = document.getElementById("original-bun-card");
-var originalBunImg = document.getElementById("original-bun-img");
-
-originalBun.onmouseover = function() {
-    originalBunImg.src = 'imgs/hover-bun-original.png';
-}
-
-originalBun.onmouseout = function() {
-    originalBunImg.src = 'imgs/bun-original.png';
-}
-
 var blackberryBun = document.getElementById("blackberry-bun-card");
-var blackberryBunImg = document.getElementById("blackberry-bun-img");
-
-blackberryBun.onmouseover = function() {
-    blackberryBunImg.src = 'imgs/hover-bun-blackberry.png';
-}
-
-blackberryBun.onmouseout = function() {
-    blackberryBunImg.src = 'imgs/bun-blackberry.png';
-}
-
 var walnutBun = document.getElementById("walnut-bun-card");
-var walnutBunImg = document.getElementById("walnut-bun-img");
-
-walnutBun.onmouseover = function() {
-    walnutBunImg.src = 'imgs/hover-bun-walnut.png';
-}
-
-walnutBun.onmouseout = function() {
-    walnutBunImg.src = 'imgs/bun-walnut.png';
-}
-
 var gfBun = document.getElementById("gf-bun-card");
-var gfBunImg = document.getElementById("gf-bun-img");
-
-gfBun.onmouseover = function() {
-    gfBunImg.src = 'imgs/hover-bun-original.png';
-}
-
-gfBun.onmouseout = function() {
-    gfBunImg.src = 'imgs/bun-original.png';
-}
-
 var pumpkinBun = document.getElementById("pumpkin-bun-card");
-var pumpkinBunImg = document.getElementById("pumpkin-bun-img");
-
-pumpkinBun.onmouseover = function() {
-    pumpkinBunImg.src = 'imgs/hover-bun-pumpkin.png';
-}
-
-pumpkinBun.onmouseout = function() {
-    pumpkinBunImg.src = 'imgs/bun-pumpkin.png';
-}
-
 var pecanBun = document.getElementById("pecan-bun-card");
-var pecanBunImg = document.getElementById("pecan-bun-img");
 
-pecanBun.onmouseover = function() {
-    pecanBunImg.src = 'imgs/hover-bun-pecan.png';
+bunHoverOver = function(bunCard, x) {
+    bunCard.children[0].src = hoverImgPaths[x];
 }
 
-pecanBun.onmouseout = function() {
-    pecanBunImg.src = 'imgs/bun-pecan.png';
+bunHoverOut = function(bunCard, x) {
+    bunCard.children[0].src = bunImgPaths[x];
 }
 
 
 // ----------- MODAL FUNCTIONS -----------
 
 // Original
-
 var ogModal = document.getElementById("og-modal");
 var ogSpan = document.getElementById("og-close");
+var currGlaze;
+var currQuant;
+var currPricePer;
+var bunObj = {
+    type: "",
+    glaze: "",
+    quantity: 0,
+    totalPrice: 0
+};
+var bunsInBasket = [];
+localStorage.clear();
+
+function resetCurrs() {
+    currGlaze = "";
+    currQuant = 0;
+    currPricePer = 0;
+}
 
 originalBun.onclick = function() {
   ogModal.style.display = "block";
+  currGlaze = "No Glaze";
+  currQuant = 1;
+  currPricePer = 3;
 }
 
 ogSpan.onclick = function() {
   ogModal.style.display = "none";
+  resetCurrs();
 }
 
 function updatePrice3(quant) {
+    currQuant = parseInt(quant);
     document.getElementById("priceid").innerText = "$".concat((quant*3).toString());
 }
 
 function incrementBuns(){
-    var newbuns = parseInt((document.getElementById("priceid").innerText).substring(1))/3;
-    totalBuns += newbuns;
+    totalBuns += currQuant;
     document.getElementById("basket_quant").innerText = totalBuns.toString();
     ogModal.style.display = "none";
+    bunObj = {
+        type: "Original",
+        glaze: "No Glaze",
+        quantity: currQuant,
+        totalPrice: currQuant * currPricePer
+    };
+    bunsInBasket.push(bunObj);
+    localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
 }
 
 // Blackberry
@@ -218,20 +198,26 @@ function cpincrementBuns(){
 window.onclick = function(event) {
     if (event.target == ogModal) {
         ogModal.style.display = "none";
+        resetCurrs();
     }
     else if (event.target == wModal) {
         wModal.style.display = "none";
+        resetCurrs();
     }
     else if (event.target == bbModal) {
         bbModal.style.display = "none";
+        resetCurrs();
     }
     else if (event.target == gfModal) {
         gfModal.style.display = "none";
+        resetCurrs();
     }
     else if (event.target == pkModal) {
         pkModal.style.display = "none";
+        resetCurrs();
     }
     else if (event.target == cpModal) {
         cpModal.style.display = "none";
+        resetCurrs();
     }
 }
