@@ -18,33 +18,33 @@ var currGlaze;
 var currQuant;
 var currPricePer;
 var bunObj = {
-    type: 0,
-    glaze: 0,
-    quantity: 0,
-    pricePer: 0,
-    totalPrice: 0
+  type: 0,
+  glaze: 0,
+  quantity: 0,
+  pricePer: 0,
+  totalPrice: 0
 };
 var bunsInBasket;
 var totalBuns;
 
 if (localStorage.getItem("bunsInBasket") != null) {
-    bunsInBasket = JSON.parse(localStorage.getItem("bunsInBasket"));
+  bunsInBasket = JSON.parse(localStorage.getItem("bunsInBasket"));
 } else {
-    bunsInBasket = [];
+  bunsInBasket = [];
 }
 
 // Check if there are buns in the basket, update number next to basket
 if (localStorage.getItem("totalBuns") != null) {
-    document.getElementById("basket_quant").innerText = localStorage.getItem("totalBuns");
-    totalBuns = parseInt(localStorage.getItem("totalBuns"));
+  document.getElementById("basket_quant").innerText = localStorage.getItem("totalBuns");
+  totalBuns = parseInt(localStorage.getItem("totalBuns"));
 } else {
-    totalBuns = 0;
+  totalBuns = 0;
 }
 
 function resetCurrs() {
-    currGlaze = 0;
-    currQuant = 0;
-    currPricePer = 0;
+  currGlaze = 0;
+  currQuant = 0;
+  currPricePer = 0;
 }
 
 var originalBun = document.getElementById("original-bun-card");
@@ -72,28 +72,28 @@ ogSpan.onclick = function() {
 }
 
 function updatePrice3(quant) {
-    currQuant = parseInt(quant);
-    document.getElementById("priceid").innerText = "$".concat((quant*3).toString());
+  currQuant = parseInt(quant);
+  document.getElementById("priceid").innerText = "$".concat((quant*3).toString());
 }
 
 function updateGlaze(glaze) {
-    currGlaze = glaze;
+  currGlaze = glaze;
 }
 
 function incrementBuns(){
-    totalBuns += currQuant;
-    document.getElementById("basket_quant").innerText = totalBuns;
-    localStorage.setItem("totalBuns", totalBuns);
-    ogModal.style.display = "none";
-    bunObj = {
-        type: 0,
-        glaze: currGlaze,
-        quantity: currQuant,
-        pricePer: 3,
-        totalPrice: currQuant * currPricePer
-    };
-    bunsInBasket.push(bunObj);
-    localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
+  totalBuns += currQuant;
+  document.getElementById("basket_quant").innerText = totalBuns;
+  localStorage.setItem("totalBuns", totalBuns);
+  ogModal.style.display = "none";
+  bunObj = {
+    type: 0,
+    glaze: currGlaze,
+    quantity: currQuant,
+    pricePer: 3,
+    totalPrice: currQuant * currPricePer
+  };
+  bunsInBasket.push(bunObj);
+  localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
 }
 
 // Blackberry
@@ -126,11 +126,11 @@ function bbincrementBuns(){
   localStorage.setItem("totalBuns", totalBuns);
   bbModal.style.display = "none";
   bunObj = {
-      type: 1,
-      glaze: currGlaze,
-      quantity: currQuant,
-      pricePer: 4,
-      totalPrice: currQuant * currPricePer
+    type: 1,
+    glaze: currGlaze,
+    quantity: currQuant,
+    pricePer: 4,
+    totalPrice: currQuant * currPricePer
   };
   bunsInBasket.push(bunObj);
   localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
@@ -166,11 +166,11 @@ function wincrementBuns(){
   localStorage.setItem("totalBuns", totalBuns);
   wModal.style.display = "none";
   bunObj = {
-      type: 2,
-      glaze: currGlaze,
-      quantity: currQuant,
-      pricePer: 3,
-      totalPrice: currQuant * currPricePer
+    type: 2,
+    glaze: currGlaze,
+    quantity: currQuant,
+    pricePer: 3,
+    totalPrice: currQuant * currPricePer
   };
   bunsInBasket.push(bunObj);
   localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
@@ -206,11 +206,11 @@ function gfincrementBuns(){
   localStorage.setItem("totalBuns", totalBuns);
   gfModal.style.display = "none";
   bunObj = {
-      type: 3,
-      glaze: currGlaze,
-      quantity: currQuant,
-      pricePer: 3,
-      totalPrice: currQuant * currPricePer
+    type: 3,
+    glaze: currGlaze,
+    quantity: currQuant,
+    pricePer: 3,
+    totalPrice: currQuant * currPricePer
   };
   bunsInBasket.push(bunObj);
   localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
@@ -246,11 +246,11 @@ function pkincrementBuns(){
   localStorage.setItem("totalBuns", totalBuns);
   pkModal.style.display = "none";
   bunObj = {
-      type: 4,
-      glaze: currGlaze,
-      quantity: currQuant,
-      pricePer: 4,
-      totalPrice: currQuant * currPricePer
+    type: 4,
+    glaze: currGlaze,
+    quantity: currQuant,
+    pricePer: 4,
+    totalPrice: currQuant * currPricePer
   };
   bunsInBasket.push(bunObj);
   localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
@@ -286,39 +286,39 @@ function cpincrementBuns(){
   localStorage.setItem("totalBuns", totalBuns);
   cpModal.style.display = "none";
   bunObj = {
-      type: 0,
-      glaze: currGlaze,
-      quantity: currQuant,
-      pricePer: 4,
-      totalPrice: currQuant * currPricePer
+    type: 0,
+    glaze: currGlaze,
+    quantity: currQuant,
+    pricePer: 4,
+    totalPrice: currQuant * currPricePer
   };
   bunsInBasket.push(bunObj);
   localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
 }
 
 window.onclick = function(event) {
-    if (event.target == ogModal) {
-        ogModal.style.display = "none";
-        resetCurrs();
-    }
-    else if (event.target == wModal) {
-        wModal.style.display = "none";
-        resetCurrs();
-    }
-    else if (event.target == bbModal) {
-        bbModal.style.display = "none";
-        resetCurrs();
-    }
-    else if (event.target == gfModal) {
-        gfModal.style.display = "none";
-        resetCurrs();
-    }
-    else if (event.target == pkModal) {
-        pkModal.style.display = "none";
-        resetCurrs();
-    }
-    else if (event.target == cpModal) {
-        cpModal.style.display = "none";
-        resetCurrs();
-    }
+  if (event.target == ogModal) {
+    ogModal.style.display = "none";
+    resetCurrs();
+  }
+  else if (event.target == wModal) {
+    wModal.style.display = "none";
+    resetCurrs();
+  }
+  else if (event.target == bbModal) {
+    bbModal.style.display = "none";
+    resetCurrs();
+  }
+  else if (event.target == gfModal) {
+    gfModal.style.display = "none";
+    resetCurrs();
+  }
+  else if (event.target == pkModal) {
+    pkModal.style.display = "none";
+    resetCurrs();
+  }
+  else if (event.target == cpModal) {
+    cpModal.style.display = "none";
+    resetCurrs();
+  }
 }
