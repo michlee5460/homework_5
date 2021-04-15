@@ -279,10 +279,6 @@ input[type=radio]:checked + label{
     text-align: center;
 }
 
-.basket-button {
-    margin: none;
-}
-
 .grid-item-price {
     display: flex;
     align-items: flex-end;
