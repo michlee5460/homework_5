@@ -1,16 +1,7 @@
-var totalBuns = 0;
+// ----------- BUN IMAGE HOVER INTERACTION -----------
 
 var hoverImgPaths = ['imgs/hover-bun-original.png', 'imgs/hover-bun-blackberry.png', 'imgs/hover-bun-walnut.png', 'imgs/hover-bun-original.png', 'imgs/hover-bun-pumpkin.png', 'imgs/hover-bun-pecan.png']
 var bunImgPaths = ['imgs/bun-original.png', 'imgs/bun-blackberry.png', 'imgs/bun-walnut.png', 'imgs/bun-original.png', 'imgs/bun-pumpkin.png', 'imgs/bun-pecan.png']
-
-// ----------- BUN IMAGE HOVER INTERACTION -----------
-
-var originalBun = document.getElementById("original-bun-card");
-var blackberryBun = document.getElementById("blackberry-bun-card");
-var walnutBun = document.getElementById("walnut-bun-card");
-var gfBun = document.getElementById("gf-bun-card");
-var pumpkinBun = document.getElementById("pumpkin-bun-card");
-var pecanBun = document.getElementById("pecan-bun-card");
 
 bunHoverOver = function(bunCard, x) {
     bunCard.children[0].src = hoverImgPaths[x];
@@ -21,32 +12,56 @@ bunHoverOut = function(bunCard, x) {
 }
 
 
-// ----------- MODAL FUNCTIONS -----------
+// ----------------- MODAL FUNCTIONS -----------------
 
-// Original
-var ogModal = document.getElementById("og-modal");
-var ogSpan = document.getElementById("og-close");
 var currGlaze;
 var currQuant;
 var currPricePer;
 var bunObj = {
-    type: "",
-    glaze: "",
+    type: 0,
+    glaze: 0,
     quantity: 0,
+    pricePer: 0,
     totalPrice: 0
 };
-var bunsInBasket = [];
-localStorage.clear();
+var bunsInBasket;
+var totalBuns;
+
+if (localStorage.getItem("bunsInBasket") != null) {
+    bunsInBasket = JSON.parse(localStorage.getItem("bunsInBasket"));
+} else {
+    bunsInBasket = [];
+}
+
+// Check if there are buns in the basket, update number next to basket
+if (localStorage.getItem("totalBuns") != null) {
+    document.getElementById("basket_quant").innerText = localStorage.getItem("totalBuns");
+    totalBuns = parseInt(localStorage.getItem("totalBuns"));
+} else {
+    totalBuns = 0;
+}
 
 function resetCurrs() {
-    currGlaze = "";
+    currGlaze = 0;
     currQuant = 0;
     currPricePer = 0;
 }
 
+var originalBun = document.getElementById("original-bun-card");
+var blackberryBun = document.getElementById("blackberry-bun-card");
+var walnutBun = document.getElementById("walnut-bun-card");
+var gfBun = document.getElementById("gf-bun-card");
+var pumpkinBun = document.getElementById("pumpkin-bun-card");
+var pecanBun = document.getElementById("pecan-bun-card");
+
+var ogModal = document.getElementById("og-modal");
+var ogSpan = document.getElementById("og-close");
+
 originalBun.onclick = function() {
+  document.getElementById("og-glaze-selection").reset();
+  document.getElementById("og-quant-selection").reset();
   ogModal.style.display = "block";
-  currGlaze = "No Glaze";
+  currGlaze = 0;
   currQuant = 1;
   currPricePer = 3;
 }
@@ -61,14 +76,20 @@ function updatePrice3(quant) {
     document.getElementById("priceid").innerText = "$".concat((quant*3).toString());
 }
 
+function updateGlaze(glaze) {
+    currGlaze = glaze;
+}
+
 function incrementBuns(){
     totalBuns += currQuant;
-    document.getElementById("basket_quant").innerText = totalBuns.toString();
+    document.getElementById("basket_quant").innerText = totalBuns;
+    localStorage.setItem("totalBuns", totalBuns);
     ogModal.style.display = "none";
     bunObj = {
-        type: "Original",
-        glaze: "No Glaze",
+        type: 0,
+        glaze: currGlaze,
         quantity: currQuant,
+        pricePer: 3,
         totalPrice: currQuant * currPricePer
     };
     bunsInBasket.push(bunObj);
@@ -81,22 +102,38 @@ var bbModal = document.getElementById("bb-modal");
 var bbSpan = document.getElementById("bb-close");
 
 blackberryBun.onclick = function() {
+  document.getElementById("bb-glaze-selection").reset();
+  document.getElementById("bb-quantity-selection").reset();
   bbModal.style.display = "block";
+  currGlaze = 0;
+  currQuant = 1;
+  currPricePer = 4;
 }
 
 bbSpan.onclick = function() {
   bbModal.style.display = "none";
+  resetCurrs();
 }
 
 function updatePrice4(quant) {
-    document.getElementById("bbpriceid").innerText = "$".concat((quant*4).toString());
+  currQuant = parseInt(quant);
+  document.getElementById("bbpriceid").innerText = "$".concat((quant*4).toString());
 }
 
 function bbincrementBuns(){
-    var newbuns = parseInt((document.getElementById("bbpriceid").innerText).substring(1))/4;
-    totalBuns += newbuns;
-    document.getElementById("basket_quant").innerText = totalBuns.toString();
-    bbModal.style.display = "none";
+  totalBuns += currQuant;
+  document.getElementById("basket_quant").innerText = totalBuns;
+  localStorage.setItem("totalBuns", totalBuns);
+  bbModal.style.display = "none";
+  bunObj = {
+      type: 1,
+      glaze: currGlaze,
+      quantity: currQuant,
+      pricePer: 4,
+      totalPrice: currQuant * currPricePer
+  };
+  bunsInBasket.push(bunObj);
+  localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
 }
 
 // Walnut
@@ -105,22 +142,38 @@ var wModal = document.getElementById("w-modal");
 var wSpan = document.getElementById("w-close");
 
 walnutBun.onclick = function() {
+  document.getElementById("w-glaze-selection").reset();
+  document.getElementById("w-quantity-selection").reset();
   wModal.style.display = "block";
+  currGlaze = 0;
+  currQuant = 1;
+  currPricePer = 3;
 }
 
 wSpan.onclick = function() {
   wModal.style.display = "none";
+  resetCurrs();
 }
 
 function updatePrice3w(quant) {
-    document.getElementById("w-priceid").innerText = "$".concat((quant*3).toString());
+  currQuant = parseInt(quant);
+  document.getElementById("w-priceid").innerText = "$".concat((quant*3).toString());
 }
 
 function wincrementBuns(){
-    var newbuns = parseInt((document.getElementById("w-priceid").innerText).substring(1))/3;
-    totalBuns += newbuns;
-    document.getElementById("basket_quant").innerText = totalBuns.toString();
-    wModal.style.display = "none";
+  totalBuns += currQuant;
+  document.getElementById("basket_quant").innerText = totalBuns;
+  localStorage.setItem("totalBuns", totalBuns);
+  wModal.style.display = "none";
+  bunObj = {
+      type: 2,
+      glaze: currGlaze,
+      quantity: currQuant,
+      pricePer: 3,
+      totalPrice: currQuant * currPricePer
+  };
+  bunsInBasket.push(bunObj);
+  localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
 }
 
 // Gluten-Free
@@ -129,22 +182,38 @@ var gfModal = document.getElementById("gf-modal");
 var gfSpan = document.getElementById("gf-close");
 
 gfBun.onclick = function() {
+  document.getElementById("gf-glaze-selection").reset();
+  document.getElementById("gf-quantity-selection").reset();
   gfModal.style.display = "block";
+  currGlaze = 0;
+  currQuant = 1;
+  currPricePer = 3;
 }
 
 gfSpan.onclick = function() {
   gfModal.style.display = "none";
+  resetCurrs();
 }
 
 function updatePrice3gf(quant) {
-    document.getElementById("gf-priceid").innerText = "$".concat((quant*3).toString());
+  currQuant = parseInt(quant);
+  document.getElementById("gf-priceid").innerText = "$".concat((quant*3).toString());
 }
 
 function gfincrementBuns(){
-    var newbuns = parseInt((document.getElementById("gf-priceid").innerText).substring(1))/3;
-    totalBuns += newbuns;
-    document.getElementById("basket_quant").innerText = totalBuns.toString();
-    gfModal.style.display = "none";
+  totalBuns += currQuant;
+  document.getElementById("basket_quant").innerText = totalBuns;
+  localStorage.setItem("totalBuns", totalBuns);
+  gfModal.style.display = "none";
+  bunObj = {
+      type: 3,
+      glaze: currGlaze,
+      quantity: currQuant,
+      pricePer: 3,
+      totalPrice: currQuant * currPricePer
+  };
+  bunsInBasket.push(bunObj);
+  localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
 }
 
 // Pumpkin
@@ -153,22 +222,38 @@ var pkModal = document.getElementById("pk-modal");
 var pkSpan = document.getElementById("pk-close");
 
 pumpkinBun.onclick = function() {
+  document.getElementById("p-glaze-selection").reset();
+  document.getElementById("p-quantity-selection").reset();
   pkModal.style.display = "block";
+  currGlaze = 0;
+  currQuant = 1;
+  currPricePer = 4;
 }
 
 pkSpan.onclick = function() {
   pkModal.style.display = "none";
+  resetCurrs();
 }
 
 function updatePrice4pk(quant) {
-    document.getElementById("pk-priceid").innerText = "$".concat((quant*4).toString());
+  currQuant = parseInt(quant);
+  document.getElementById("pk-priceid").innerText = "$".concat((quant*4).toString());
 }
 
 function pkincrementBuns(){
-    var newbuns = parseInt((document.getElementById("pk-priceid").innerText).substring(1))/4;
-    totalBuns += newbuns;
-    document.getElementById("basket_quant").innerText = totalBuns.toString();
-    pkModal.style.display = "none";
+  totalBuns += currQuant;
+  document.getElementById("basket_quant").innerText = totalBuns;
+  localStorage.setItem("totalBuns", totalBuns);
+  pkModal.style.display = "none";
+  bunObj = {
+      type: 4,
+      glaze: currGlaze,
+      quantity: currQuant,
+      pricePer: 4,
+      totalPrice: currQuant * currPricePer
+  };
+  bunsInBasket.push(bunObj);
+  localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
 }
 
 // Caramel Pecan
@@ -177,22 +262,38 @@ var cpModal = document.getElementById("cp-modal");
 var cpSpan = document.getElementById("cp-close");
 
 pecanBun.onclick = function() {
+  document.getElementById("cp-glaze-selection").reset();
+  document.getElementById("cp-quantity-selection").reset();
   cpModal.style.display = "block";
+  currGlaze = 0;
+  currQuant = 1;
+  currPricePer = 4;
 }
 
 cpSpan.onclick = function() {
   cpModal.style.display = "none";
+  resetCurrs();
 }
 
 function updatePrice4cp(quant) {
-    document.getElementById("cp-priceid").innerText = "$".concat((quant*4).toString());
+  currQuant = parseInt(quant);
+  document.getElementById("cp-priceid").innerText = "$".concat((quant*4).toString());
 }
 
 function cpincrementBuns(){
-    var newbuns = parseInt((document.getElementById("cp-priceid").innerText).substring(1))/4;
-    totalBuns += newbuns;
-    document.getElementById("basket_quant").innerText = totalBuns.toString();
-    cpModal.style.display = "none";
+  totalBuns += currQuant;
+  document.getElementById("basket_quant").innerText = totalBuns;
+  localStorage.setItem("totalBuns", totalBuns);
+  cpModal.style.display = "none";
+  bunObj = {
+      type: 0,
+      glaze: currGlaze,
+      quantity: currQuant,
+      pricePer: 4,
+      totalPrice: currQuant * currPricePer
+  };
+  bunsInBasket.push(bunObj);
+  localStorage.setItem("bunsInBasket", JSON.stringify(bunsInBasket));
 }
 
 window.onclick = function(event) {

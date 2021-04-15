@@ -357,6 +357,11 @@ input[type=radio]:checked + label{
 .gray-text {
   color: #8A8A8A;
   margin-bottom: .25em;
+  margin-top: 0em;
+}
+
+.bottom-margin{
+  margin-bottom: 1.5em;
 }
 
 .shop-address{
@@ -364,7 +369,7 @@ input[type=radio]:checked + label{
   margin-bottom: 2em;
 }
 
-#og-bun-basket {
+.og-bun-basket {
   border-top: 1px solid #BDBDBD;
 }
 
@@ -385,7 +390,25 @@ input[type=radio]:checked + label{
 
 .basket-close {
   float: right;
+  margin-top: .75em;
   font-weight: normal;
   font-size: x-large;
   color: #BDBDBD;
+}
+
+.basket-close:hover,
+.basket-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#delivery-address {
+  display: none;
+}
+
+.change-quant:hover,
+.change-quant:focus {
+  text-decoration: none;
+  cursor: pointer;
 }

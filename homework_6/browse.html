@@ -54,17 +54,17 @@
                   <div class="grid-item-text">
                     <!-- Glaze selection -->
                     <h1 class="item-header">Glaze</h1>
-                    <form>
+                    <form id="og-glaze-selection">
                       <div class="radio-group">
-                        <input type="radio" id="option-none" name="glaze" checked="checked"><label for="option-none">No<br>Glaze</label>
-                        <input type="radio" id="option-sm" name="glaze"><label for="option-sm">Sugar<br>Milk</label>
-                        <input type="radio" id="option-vm" name="glaze"><label for="option-vm">Vanilla<br>Milk</label>
-                        <input type="radio" id="option-dc" name="glaze"><label for="option-dc">Double<br>Chocolate</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" id="option-none" name="glaze" checked="checked" value=0><label for="option-none">No<br>Glaze</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" id="option-sm" name="glaze" value=1><label for="option-sm">Sugar<br>Milk</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" id="option-vm" name="glaze" value=2><label for="option-vm">Vanilla<br>Milk</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" id="option-dc" name="glaze" value=3><label for="option-dc">Double<br>Chocolate</label>
                       </div>
                     </form>
                     <!-- Quantity selection -->
                     <h1 class="item-header">Quantity</h1>
-                    <form>
+                    <form id="og-quant-selection">
                       <div class="radio-group">
                         <input type="radio" onclick="updatePrice3(this.value)" id="option-one" name="quantity" checked="checked" value=1><label class="quant-label" for="option-one">1</label>
                         <input type="radio" onclick="updatePrice3(this.value)" id="option-two" name="quantity" value=3><label class="quant-label" for="option-two">3</label>
@@ -113,17 +113,17 @@
                   <div class="grid-item-text">
                     <!-- Glaze selection -->
                     <h1 class="item-header">Glaze</h1>
-                    <form>
+                    <form id="bb-glaze-selection">
                       <div class="radio-group">
-                        <input type="radio" id="bboption-none" name="bbglaze" checked="checked"><label for="bboption-none">No<br>Glaze</label>
-                        <input type="radio" id="bboption-sm" name="bbglaze"><label for="bboption-sm">Sugar<br>Milk</label>
-                        <input type="radio" id="bboption-vm" name="bbglaze"><label for="bboption-vm">Vanilla<br>Milk</label>
-                        <input type="radio" id="bboption-dc" name="bbglaze"><label for="bboption-dc">Double<br>Chocolate</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=0 id="bboption-none" name="bbglaze" checked="checked"><label for="bboption-none">No<br>Glaze</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=1 id="bboption-sm" name="bbglaze"><label for="bboption-sm">Sugar<br>Milk</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=2 id="bboption-vm" name="bbglaze"><label for="bboption-vm">Vanilla<br>Milk</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=3 id="bboption-dc" name="bbglaze"><label for="bboption-dc">Double<br>Chocolate</label>
                       </div>
                     </form>
                     <!-- Quantity selection -->
                     <h1 class="item-header">Quantity</h1>
-                    <form>
+                    <form id="bb-quantity-selection">
                       <div class="radio-group">
                         <input type="radio" onclick="updatePrice4(this.value)" id="bboption-one" name="bbquantity" checked="checked" value=1><label class="quant-label" for="bboption-one">1</label>
                         <input type="radio" onclick="updatePrice4(this.value)" id="bboption-two" name="bbquantity" value=3><label class="quant-label" for="bboption-two">3</label>
@@ -172,17 +172,17 @@
                   <div class="grid-item-text">
                     <!-- Glaze selection -->
                     <h1 class="item-header">Glaze</h1>
-                    <form>
+                    <form id="w-glaze-selection">
                       <div class="radio-group">
-                        <input type="radio" id="w-option-none" name="w-glaze" checked="checked"><label for="w-option-none">No<br>Glaze</label>
-                        <input type="radio" id="w-option-sm" name="w-glaze"><label for="w-option-sm">Sugar<br>Milk</label>
-                        <input type="radio" id="w-option-vm" name="w-glaze"><label for="w-option-vm">Vanilla<br>Milk</label>
-                        <input type="radio" id="w-option-dc" name="w-glaze"><label for="w-option-dc">Double<br>Chocolate</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=0 id="w-option-none" name="w-glaze" checked="checked"><label for="w-option-none">No<br>Glaze</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=1 id="w-option-sm" name="w-glaze"><label for="w-option-sm">Sugar<br>Milk</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=2 id="w-option-vm" name="w-glaze"><label for="w-option-vm">Vanilla<br>Milk</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=3 id="w-option-dc" name="w-glaze"><label for="w-option-dc">Double<br>Chocolate</label>
                       </div>
                     </form>
                     <!-- Quantity selection -->
                     <h1 class="item-header">Quantity</h1>
-                    <form>
+                    <form id="w-quantity-selection">
                       <div class="radio-group">
                         <input type="radio" onclick="updatePrice3w(this.value)" id="w-option-one" name="w-quantity" checked="checked" value=1><label class="quant-label" for="w-option-one">1</label>
                         <input type="radio" onclick="updatePrice3w(this.value)" id="w-option-two" name="w-quantity" value=3><label class="quant-label" for="w-option-two">3</label>
@@ -231,17 +231,17 @@
                   <div class="grid-item-text">
                     <!-- Glaze selection -->
                     <h1 class="item-header">Glaze</h1>
-                    <form>
+                    <form id="gf-glaze-selection">
                       <div class="radio-group">
-                        <input type="radio" id="gf-option-none" name="gf-glaze" checked="checked"><label for="gf-option-none">No<br>Glaze</label>
-                        <input type="radio" id="gf-option-sm" name="gf-glaze"><label for="gf-option-sm">Sugar<br>Milk</label>
-                        <input type="radio" id="gf-option-vm" name="gf-glaze"><label for="gf-option-vm">Vanilla<br>Milk</label>
-                        <input type="radio" id="gf-option-dc" name="gf-glaze"><label for="gf-option-dc">Double<br>Chocolate</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=0 id="gf-option-none" name="gf-glaze" checked="checked"><label for="gf-option-none">No<br>Glaze</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=1 id="gf-option-sm" name="gf-glaze"><label for="gf-option-sm">Sugar<br>Milk</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=2 id="gf-option-vm" name="gf-glaze"><label for="gf-option-vm">Vanilla<br>Milk</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=3 id="gf-option-dc" name="gf-glaze"><label for="gf-option-dc">Double<br>Chocolate</label>
                       </div>
                     </form>
                     <!-- Quantity selection -->
                     <h1 class="item-header">Quantity</h1>
-                    <form>
+                    <form id="gf-quantity-selection">
                       <div class="radio-group">
                         <input type="radio" onclick="updatePrice3gf(this.value)" id="gf-option-one" name="gf-quantity" checked="checked" value=1><label class="quant-label" for="gf-option-one">1</label>
                         <input type="radio" onclick="updatePrice3gf(this.value)" id="gf-option-two" name="gf-quantity" value=3><label class="quant-label" for="gf-option-two">3</label>
@@ -290,17 +290,17 @@
                   <div class="grid-item-text">
                     <!-- Glaze selection -->
                     <h1 class="item-header">Glaze</h1>
-                    <form>
+                    <form id="p-glaze-selection">
                       <div class="radio-group">
-                        <input type="radio" id="pk-option-none" name="pk-glaze" checked="checked"><label for="pk-option-none">No<br>Glaze</label>
-                        <input type="radio" id="pk-option-sm" name="pk-glaze"><label for="pk-option-sm">Sugar<br>Milk</label>
-                        <input type="radio" id="pk-option-vm" name="pk-glaze"><label for="pk-option-vm">Vanilla<br>Milk</label>
-                        <input type="radio" id="pk-option-dc" name="pk-glaze"><label for="pk-option-dc">Double<br>Chocolate</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=0 id="pk-option-none" name="pk-glaze" checked="checked"><label for="pk-option-none">No<br>Glaze</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=1 id="pk-option-sm" name="pk-glaze"><label for="pk-option-sm">Sugar<br>Milk</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=2 id="pk-option-vm" name="pk-glaze"><label for="pk-option-vm">Vanilla<br>Milk</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=3 id="pk-option-dc" name="pk-glaze"><label for="pk-option-dc">Double<br>Chocolate</label>
                       </div>
                     </form>
                     <!-- Quantity selection -->
                     <h1 class="item-header">Quantity</h1>
-                    <form>
+                    <form id="p-quantity-selection">
                       <div class="radio-group">
                         <input type="radio" onclick="updatePrice4pk(this.value)" id="pk-option-one" name="pk-quantity" checked="checked" value=1><label class="quant-label" for="pk-option-one">1</label>
                         <input type="radio" onclick="updatePrice4pk(this.value)" id="pk-option-two" name="pk-quantity" value=3><label class="quant-label" for="pk-option-two">3</label>
@@ -349,17 +349,17 @@
                   <div class="grid-item-text">
                     <!-- Glaze selection -->
                     <h1 class="item-header">Glaze</h1>
-                    <form>
+                    <form id="cp-glaze-selection">
                       <div class="radio-group">
-                        <input type="radio" id="cp-option-none" name="cp-glaze" checked="checked"><label for="cp-option-none">No<br>Glaze</label>
-                        <input type="radio" id="cp-option-sm" name="cp-glaze"><label for="cp-option-sm">Sugar<br>Milk</label>
-                        <input type="radio" id="cp-option-vm" name="cp-glaze"><label for="cp-option-vm">Vanilla<br>Milk</label>
-                        <input type="radio" id="cp-option-dc" name="cp-glaze"><label for="cp-option-dc">Double<br>Chocolate</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=0 id="cp-option-none" name="cp-glaze" checked="checked"><label for="cp-option-none">No<br>Glaze</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=1 id="cp-option-sm" name="cp-glaze"><label for="cp-option-sm">Sugar<br>Milk</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=2 id="cp-option-vm" name="cp-glaze"><label for="cp-option-vm">Vanilla<br>Milk</label>
+                        <input type="radio" onclick="updateGlaze(this.value)" value=3 id="cp-option-dc" name="cp-glaze"><label for="cp-option-dc">Double<br>Chocolate</label>
                       </div>
                     </form>
                     <!-- Quantity selection -->
                     <h1 class="item-header">Quantity</h1>
-                    <form>
+                    <form id="cp-quantity-selection">
                       <div class="radio-group">
                         <input type="radio" onclick="updatePrice4cp(this.value)" id="cp-option-one" name="cp-quantity" checked="checked" value=1><label class="quant-label" for="cp-option-one">1</label>
                         <input type="radio" onclick="updatePrice4cp(this.value)" id="cp-option-two" name="cp-quantity" value=3><label class="quant-label" for="cp-option-two">3</label>

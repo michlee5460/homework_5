@@ -6,7 +6,7 @@
     <link rel="icon" href="imgs/bblogo-small.png"> 
     <link rel="stylesheet" href="https://use.typekit.net/ahg0pva.css">
     <link rel="stylesheet" href="styles.css">
-    <!--<script defer src="script.js"></script> -->
+    <script defer src="scripts/script-basket.js"></script>
   </head>
 
   <body>
@@ -21,7 +21,7 @@
               <img class="navbar-logo" src="imgs/bblogo-small.png" alt=""/>
             </a>
           </li>
-          <li class="navitem-right"><a class="navitem-link" href="basket.html">BASKET (0)</a></li>
+          <li class="navitem-right"><a class="navitem-link" href="basket.html">BASKET (<span id="basket_quant">0</span>)</a></li>
           <li class="navitem-right"><a class="navitem-link" href="browse.html">MENU</a></li>
         </ul>
       
@@ -30,40 +30,33 @@
         <div class="basket-grid-wrapper">
           <div class="grid-basket-list">
             <h1>Bun Basket</h1>
-            <form>
+            <form class="bottom-margin">
               <div class="radio-group">
-                <input type="radio" id="option-one" name="quantity" checked="checked" value=1><label class="tkout-del-label" for="option-one">TAKEOUT</label>
-                <input type="radio" id="option-two" name="quantity" value=2><label class="tkout-del-label" for="option-two">DELIVERY</label>
+                <input type="radio" onclick="showAddress()" id="option-one" name="quantity" checked="checked" value=1><label class="tkout-del-label" for="option-one">TAKEOUT</label>
+                <input type="radio" onclick="hideAddress()" id="option-two" name="quantity" value=2><label class="tkout-del-label" for="option-two">DELIVERY</label>
               </div>
             </form>
+
             <div id="bb-address">
               <p class="gray-text">Pickup Address:</p>
               <p class="shop-address">123 Bun Bun Way<br>Pittsburgh, PA 15213</p>
             </div>
-            <div id="og-bun-basket">
-              <div class="item-grid">
-                <div>
-                  <img class="basket-img item-img" id="original-bun-img" src=imgs/bun-original.png alt="original">
-                </div>
-                <div>
-                  <h1 class="basket-item-header">Original <span class="basket-close">&times;</span></h1>
-                  <p>No glaze</p>
-                  <p><span>-</span> 1 <span>+</span> <span class="item-price">$3.00</span></p>
-                </div>
+
+            <form id="delivery-address" class="bottom-margin">
+              <p class="gray-text">Deliver to:</p>
+              <div>
+                <label>Address</label>
+                <input type="text">
+                <label>City</label>
+                <input type="text">
+                <label>State</label>
+                <input type="text">
+                <label>Zip Code</label>
+                <input type="text">
               </div>
-            </div>
-            <div id="og-bun-basket">
-              <div class="item-grid">
-                <div>
-                  <img class="basket-img item-img" id="original-bun-img" src=imgs/bun-original.png alt="original">
-                </div>
-                <div>
-                  <h1 class="basket-item-header">Original <span class="basket-close">&times;</span></h1>
-                  <p>No glaze</p>
-                  <p><span>-</span> 1 <span>+</span> <span class="item-price">$3.00</span></p>
-                </div>
-              </div>
-            </div>
+            </form>
+
+            <div id="bun-basket-start"></div>
           </div>
           <div class="grid-summary">
             <div class="summary-rect bottom-padding">
@@ -72,20 +65,20 @@
                 <div class="grid-item-left">
                   Subtotal
                 </div>
-                <div class="grid-item-right">
-                  $8.00
+                <div id="subtotal" class="grid-item-right">
+                  $0.00
                 </div>
                 <div class="grid-item-left bottom-border">
                   Tax (6%)
                 </div>
-                <div class="grid-item-right bottom-border">
-                  $0.48
+                <div id="tax" class="grid-item-right bottom-border">
+                  $0.00
                 </div>
                 <div class="grid-item-left top-border">
                   Total
                 </div>
-                <div class="grid-item-right top-border">
-                  $8.48
+                <div id="total" class="grid-item-right top-border">
+                  $0.00
                 </div>
                 
               </div>
