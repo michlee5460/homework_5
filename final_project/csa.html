@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <title>CMU CS Academy</title>
+
+    <!-- Load Bootstrap v5.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
+    <!-- My Style Sheet and Favicon -->
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="icon" type="image" href="imgs/favicon-csa.png">
+
+    <!-- Load JS plugins for Bootstrap components -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <a id="top"></a>
+
+    <div id="page-container">
+      <div id="content-wrap">
+
+        <!-- NavBar (Modified from source: Bootstrap Docs) -->
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8 small-top-margin">
+            <nav class="navbar navbar-expand-sm navbar-light bg-white">
+              <div class="container-fluid container-lr-padded" id="navbar-container">
+                <a class="navbar-brand" href="index.html">
+                    <div id="navbar-title">Michelle Lee</div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="index.html">projects</a>
+                    <a class="nav-link" href="assets/resume.pdf">résumé</a>
+                    <a class="nav-link" href="me.html">me</a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <div class="col-lg-2"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class = "main-content">
+          <div class="container-fluid hide-overflow">
+            <img class="banner-img" src="imgs/project-banner-csa.png"/>
+          </div>
+
+          <div class="container-fluid container-lr-padded big-top-margin">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <h1>CMU CS Academy</h1>
+                <h5 class="tagline bottom-margin">Redesigning an online, interactive, educational platform for high school, computer science classrooms</h5>
+
+                <div class="row littlest-bottom-margin">
+                  <div class="col-lg-2"><strong>Role</strong></div>
+                  <div class="col-lg-10">UX Designer</div>
+                </div>
+
+                <div class="row littlest-bottom-margin">
+                  <div class="col-lg-2"><strong>Duration</strong></div>
+                  <div class="col-lg-10">May 2020 - Aug 2020 (3 months)</div>
+                </div>
+
+                <div class="row littlest-bottom-margin">
+                  <div class="col-lg-2"><strong>Team</strong></div>
+                  <div class="col-lg-10">Monica Chang, Janet Peng, Jiewen Chen, PeYi Yi, Victoria Shiau</div>
+                </div>
+
+                <div class="row bottom-margin">
+                  <div class="col-lg-2"><strong>Skills</strong></div>
+                  <div class="col-lg-10">Design Systems, User Testing, Affinity Diagramming, Interface Design, Prototyping</div>
+                </div>
+
+                <hr>
+
+                <dl class="row big-top-margin">
+                  <dt class="col-lg-3">
+                    <h4>Background</h4>
+                  </dt>
+                  <dd class="col-lg-9">
+                    <p>CMU CS Academy is a project in Carnegie Mellon University that provides high school teachers with free, online, interactive computer science curriculum. Through an online platform, CMU CS Academy not only provides teaching material and programming exercises, but also an integrated development environment (IDE), grading tools, and more. As more teachers began to use the products and services CMU CS Academy provided, problems with CMU CS Academy's existing website began to surface. In the Summer of 2020, CMU CS Academy's website underwent a total redesign. Before I joined the team, a new information architecture and design system had already been created for the website redesign.</p>
+                  </dd>
+                </dl>   
+                
+                <dl class="row big-bottom-margin">
+                  <dt class="col-lg-3">
+                    <h4>Overview</h4>
+                  </dt>
+                  <dd class="col-lg-9">
+                    <p>The primary task was to <strong>redesign the teacher-facing and student-facing user interfaces</strong> which included the textbook, IDE, and class management tools. Secondarily, I redesigned informational pages for the website such as the About page and a splash page for a graphics package that had just been developed. The rest of this case study will specifically focus on the exercise IDE and all the research, designing, and testing that went behind it.</p>
+                  </dd>
+                </dl>
+
+                <div class="row gx-5 bottom-margin">
+                  <div class="col-lg-6">
+                    <img src="imgs/csa/old-exercise-faces-short.png" class="w-100-img little-bottom-margin"/>
+                    <p class="caption-text">Previous Exercise IDE</p>
+                  </div>
+                  <div class="col-lg-6">
+                    <img src="imgs/csa/new-exercise-faces.png" class="w-100-img little-bottom-margin"/>
+                    <p class="caption-text">Redesigned Exercise IDE</p>
+                  </div>
+                </div>
+
+                <hr>
+
+                <dl class="row big-top-margin big-bottom-margin">
+                  <dt class="col-lg-3">
+                    <h4>Research</h4>
+                  </dt>
+                  <dd class="col-lg-9">
+                    <p>I began my design process with a concept map to better understand the domain in which CMU CS Academy existed. From this map, I gathered that one of the most critical and influential parts of CMU CS Academy was the teacher. I also looked through help desk tickets submitted by teachers and students to collect common pain points of the current IDE interface. Additionally, I looked at other computer science educational platforms such as Codecademy and Code.org to see what others have done in this domain, doing an informal competitive analysis.
+                    </p>
+                  </dd>
+                  <dt class="col-lg-3"></dt>
+                  <dd class="col-lg-9">
+                    <img src="imgs/csa/concept-map.jpg" class="w-100-img little-bottom-margin"/>
+                    <p class="caption-text">CMU CS Academy Concept Map</p>
+                  </dd>
+                </dl>
+
+                <dl class="row big-top-margin bottom-margin">
+                  <dt class="col-lg-3">
+                    <h4>Definition</h4>
+                  </dt>
+                  <dd class="col-lg-9">
+                    From the concept map, help desk tickets, and exploration of other educational content providers, the team and I identified 2 problems in particular to address in our redesign:
+                    <dl class="row top-margin">
+                      <div class="col-lg-1"></div>
+                      <dt class="col-lg-2"><h5 class="csa-text-color">Problem 1</h5></dt>
+                      <dd class="col-lg-9">Teachers and students struggle to understand and correctly use the programming checklist and its test cases.</dd>
+                      <div class="col-lg-1"></div>
+                      <dt class="col-lg-2"><h5 class="csa-text-color">Problem 2</h5></dt>
+                      <dd class="col-lg-9">The inspector tool is too difficult to use. It's confusing and opaque.</dd>
+                    </dl>
+                    Along with improving these interactions, we also needed to implement the new design system into the visual design of the IDE.
+                  </dd>
+                </dl>
+
+                <dl class="row big-top-margin bottom-margin">
+                  <dt class="col-lg-3">
+                    <h4>Explorations</h4>
+                  </dt>
+                  <dd class="col-lg-9 bottom-margin">
+                    I was assigned to specifically focus on problem 2. The inspector is a tool used in the IDE to identify the location, color, shape, and other attributes of objects on the canvas. I created sketches of the possible interactions users could have with the inspector tool and corresponding screens for those interactions, including the current implementation. For the latter sketch, I took inspiration from graphic design softwares that employ layers to organize the elements on a page.
+                  </dd>
+                  <dt class="col-lg-3"></dt>
+                  <dd class="col-lg-4">
+                    <img src="imgs/csa/inspector-sketch1.jpg" class="w-100-img little-bottom-margin"/>
+                  </dd>
+                  <dd class="col-lg-4">
+                    <img src="imgs/csa/inspector-sketch2.jpg" class="w-100-img little-bottom-margin"/>
+                  </dd>
+                  <dt class="col-lg-3">
+                  </dt>
+                  <dd class="col-lg-9">
+                    To get an idea if I was on the right track, I set up a call with the development and content creation team to talk about the initial ideas I had.
+                    <dl class="row top-margin">
+                      <div class="col-lg-1"></div>
+                      <dt class="col-lg-2"><h5 class="csa-text-color">Design Constraint</h5></dt>
+                      <dd class="col-lg-9">There exists a delicate balance between ease of use and educational friction. Intentional friction can lead to better learning outcomes.</dd>
+                    </dl>
+                    </dd>
+                </dl>
+
+                <dl class="row top-margin bottom-margin">
+                  <dt class="col-lg-3">
+                    <h4>Prototyping</h4>
+                  </dt>
+                  <dd class="col-lg-9 bottom-margin">
+                    Then, I used Figma to create prototypes of the inspector interactions. While creating these higher fidelity mockups, I designed through CMU CS Academy's new design system.
+                  </dd>
+                  <dt class="col-lg-3"></dt>
+                  <dd class="col-lg-9">
+                    <img src="imgs/csa/inspector-comparison.png" class="w-100-img"/>
+                  </dd>
+                </dl>
+
+                <hr>
+
+                <dl class="row big-top-margin bottom-margin">
+                  <dt class="col-lg-3">
+                    <h4>User Testing</h4>
+                  </dt>
+                  <dd class="col-lg-9 bottom-margin">
+                    After integrating my prototypes with the prototypes of other features my teammates designed that addressed problem 1, we tested the new design with current teachers and students giving them tasks to complete given this new interface. We captured their feedback and created affinity diagrams for each feature.
+                  </dd>
+                  <dt class="col-lg-3"></dt>
+                  <dd class="col-lg-9">
+                    <img src="imgs/csa/inspector-affinitydiagram.png" class="w-100-img little-bottom-margin"/>
+                  </dd>
+                </dl>
+
+                <hr>
+
+                <dl class="row big-top-margin bottom-margin">
+                  <dt class="col-lg-3">
+                    <h4>Results</h4>
+                  </dt>
+                  <dd class="col-lg-9 bottom-margin">
+                    The layer-based inspector led to quicker completion times, but each inspector design took the same amount of time for the user to orient themselves. So, from the moment of seeing the new inspector to the moment they wrote the first line of corresponding code was similar. In the comparison reflections, we found that students responded neutrally between the two, but among teachers we actually discovered a lot of polarization. Some users were appreciative of the new interaction, calling it helpful and clear, while others thought it detracted from the learning experience. Among the teacher coaches, we received a unanimous response that the attribute-grouped inspector was preferred because more deductive reasoning they felt was critical to building student's problem solving skills.
+                  </dd>
+                  <dt class="col-lg-3">
+                    <h4>Final Iteration</h4>
+                  </dt>
+                  <dd class="col-lg-9">
+                    <img src="imgs/csa/inspector-final.png" class="w-100-img little-bottom-margin"/>
+                  </dd>
+                </dl>
+
+                <hr>
+
+                <dl class="row big-top-margin little-bottom-margin">
+                  <dt class="col-lg-3">
+                    <h4>Reflection</h4>
+                  </dt>
+                  <dd class="col-lg-9 bottom-margin">
+                    Looking back on this project, one of the biggest takeaways I learned was the importance of collaboration early on in the design process. Talking with the development team and the content team early in the process allowed the design team to prioritize constraints that ultimately drove the final decisions we made about the interface. Also, one of the highlights of this project for me was the cross-functional communication I was able to have with the other teams, translating their needs and goals into a multi-faceted solution.
+                    <p class="small-top-margin">Throughout this project, my greatest concern was to stay true to the findings that revealed themselves, fervently holding onto them no matter how tricky the design process was, because I knew that they'd make the best solution for the students and teachers I was designing for. I hope to continue to stay true to finding amidst complex problems and press on for simple solutions for the sake of my users.</p>
+                  </dd>
+                </dl>
+                
+                <div class="row top-margin big-bottom-margin backtotop-row">
+                    <a href="#top" class="backtotop">^</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="container-fluid" id="footer">
+        Designed and developed by mish (2021)
+      </footer>
+    </div>
+  </body>
+</html>
